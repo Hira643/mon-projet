@@ -1,0 +1,25 @@
+/* Four prominent, persistent destinations in the campaign. */
+.campaign-tabs.game-menu{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;position:static;z-index:auto;margin:0 0 30px;padding:10px;border:1px solid #c9d2c0;border-radius:16px;background:#fffdf5f5;backdrop-filter:blur(16px);box-shadow:0 7px 22px #243b3219,0 2px 0 #fff9;isolation:isolate}
+.game-menu .game-menu-button{--menu-color:#23684c;--menu-tint:#eaf4ed;--menu-line:#b9d2bd;--menu-active:#28694c;display:flex;align-items:center;justify-content:flex-start;gap:10px;position:relative;min-width:0;min-height:70px;margin:0;padding:12px 13px;border:1px solid var(--menu-line);border-radius:10px;background:var(--menu-tint);color:var(--menu-color);text-align:left;box-shadow:0 2px 0 #20392a08;transition:background .18s,border-color .18s,box-shadow .18s,transform .18s}
+.game-menu .menu-trainers{--menu-color:#775185;--menu-tint:#f4edf9;--menu-line:#d8c4e3;--menu-active:#77508b}
+.game-menu .menu-collection{--menu-color:#356f96;--menu-tint:#ebf3fa;--menu-line:#bfd3e3;--menu-active:#326c92}
+.game-menu .menu-shop{--menu-color:#8a6527;--menu-tint:#fcf3dd;--menu-line:#e4cf99;--menu-active:#8a672d}
+.game-menu-icon{display:grid;place-items:center;width:34px;height:38px;flex-shrink:0;border:1px solid var(--menu-line);border-radius:9px;background:#fff9;color:var(--menu-color)}
+.game-menu-icon svg{width:23px;height:23px}.game-menu-copy{display:flex;flex-direction:column;gap:5px;min-width:0;flex:1}.game-menu-copy strong{font-family:"Space Grotesk",sans-serif;font-size:14px;font-weight:700;line-height:1.25;letter-spacing:-.25px}.game-menu-copy small{font-size:8px;font-weight:400;line-height:1.4;color:var(--menu-color);opacity:.85}
+.game-menu-indicator{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;opacity:0;box-shadow:0 0 0 3px #ffffff1c}
+.game-menu .game-menu-button:hover:enabled{border-color:var(--menu-color);box-shadow:0 4px 10px #243b3219;transform:translateY(-2px)}
+.game-menu .game-menu-button[aria-pressed="true"]{color:#fffdf4;background:linear-gradient(130deg,var(--menu-active),var(--menu-color));border-color:var(--menu-color);box-shadow:0 4px 13px #243b322b,inset 0 1px 0 #ffffff24}
+.game-menu-button[aria-pressed="true"] .game-menu-icon{background:#ffffff1c;border-color:#ffffff40;color:#fffdf4}.game-menu-button[aria-pressed="true"] .game-menu-copy small{color:#fffdf4;opacity:.85}.game-menu-button[aria-pressed="true"] .game-menu-indicator{opacity:1}
+.game-menu .game-menu-button:focus-visible{outline:3px solid var(--menu-color);outline-offset:3px}.game-menu .game-menu-button:disabled{opacity:.48;cursor:default;transform:none;box-shadow:none}
+[data-campaign-section],.free-level-group,#campaign-fight,.replacement-picker{scroll-margin-top:20px}
+.battle-turn{top:12px}
+#campaign-fight .battle-turn{top:12px;z-index:15}
+@media(max-width:1050px){.campaign-tabs.game-menu{gap:7px;padding:8px}.game-menu .game-menu-button{gap:8px;padding:11px 9px}.game-menu-copy strong{font-size:12px}.game-menu-copy small{font-size:7px}.game-menu-icon{width:29px;height:34px}.game-menu-icon svg{width:20px;height:20px}.game-menu-indicator{width:5px;height:5px}}
+@media(max-width:760px){.campaign-tabs.game-menu{gap:6px;border-radius:13px;margin-bottom:25px}.game-menu .game-menu-button{flex-direction:column;justify-content:center;gap:7px;min-height:79px;padding:9px 5px;text-align:center}.game-menu-copy{flex:0;gap:0}.game-menu-copy strong{font-size:11px;line-height:1.25;letter-spacing:-.2px}.game-menu-copy small{display:none}.game-menu-icon{width:28px;height:29px;border-radius:7px}.game-menu-icon svg{width:19px;height:19px}.game-menu-indicator{position:absolute;top:7px;right:7px;width:4px;height:4px}}
+@media(max-width:400px){.campaign-tabs.game-menu{padding:6px;gap:5px}.game-menu .game-menu-button{min-height:82px;padding:9px 4px}.game-menu-copy strong{font-size:10px;max-width:65px}.game-menu-icon{width:27px;height:28px}}
+@media(prefers-reduced-motion:reduce){.game-menu .game-menu-button{transition:none}.game-menu .game-menu-button:hover:enabled{transform:none}}
+
+/* Header and navigation stay at the beginning of the document, without following scroll. */
+.app{padding-top:0}
+.topbar{position:static;top:auto;left:auto;width:auto;margin-top:0;z-index:auto}
+.campaign-tabs.game-menu::before{content:none}

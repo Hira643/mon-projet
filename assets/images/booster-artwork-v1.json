@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-03",
+  "mode": "Built-in imagegen for discovery; existing official artwork and CSS composition for Super and Hyper",
+  "assets": [
+    {
+      "file": "booster-discovery-v1.png",
+      "path": "/home/ekiwax/projets/mon-projet/assets/images/booster-discovery-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: premium vertical trading card booster cover ART for the French browser game Kanto Odyssée. Generate one exquisite 2:3 portrait illustration, edge-to-edge rectangular artwork, no frame and NO TEXT anywhere. Subject: Bulbasaur, recognizable accurate Pokémon design, delightful determined expression, teal green quadruped with the large green plant bulb on its back, full body centered in the lower-middle, looking toward the viewer, one subject. Scene: magical emerald ancient forest, enormous mossy roots, luminous ferns, floating golden pollen, tiny white wildflowers, dawn sunbeams streaming through the canopy, sparkling dew, beautiful green and cream palette with restrained antique gold highlights. Style: exceptionally polished Japanese adventure game key art, sophisticated painterly cel shading, fine delicate linework, rich layered foliage, cinematic lighting, charming and collectible, premium illustration quality, carefully controlled detail. Composition: generous dark quiet forest canopy in the top quarter reserved for later HTML typography, clear readable creature silhouette centered, feet visible, richly decorated lower foliage but no clutter over the creature, depth and atmospheric bokeh. Not a mockup or photograph; illustration only. NO cards, packs, wrappers, borders, lettering, numbers, symbols, emblems, logos, signature, watermark or UI.",
+      "source": "Built-in imagegen"
+    },
+    {
+      "file": "booster-blastoise-official-v1.png",
+      "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
+      "composition": "Existing ocean landscape atlas and CSS foil packaging"
+    },
+    {
+      "file": "booster-mew-official-v1.png",
+      "source": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png",
+      "composition": "Existing landscape atlas with CSS golden halo and foil packaging"
+    }
+  ],
+  "generationAttempts": [
+    {
+      "prompt": "Use case: stylized-concept. Asset type: premium vertical trading card booster cover ART for the French browser game Kanto Odyssée. Generate one exquisite 2:3 portrait illustration, edge-to-edge rectangular artwork, no frame and NO TEXT anywhere. Subject: Bulbasaur, recognizable accurate Pokémon design, delightful determined expression, teal green quadruped with the large green plant bulb on its back, full body centered in the lower-middle, looking toward the viewer, one subject. Scene: magical emerald ancient forest, enormous mossy roots, luminous ferns, floating golden pollen, tiny white wildflowers, dawn sunbeams streaming through the canopy, sparkling dew, beautiful green and cream palette with restrained antique gold highlights. Style: exceptionally polished Japanese adventure game key art, sophisticated painterly cel shading, fine delicate linework, rich layered foliage, cinematic lighting, charming and collectible, premium illustration quality, carefully controlled detail. Composition: generous dark quiet forest canopy in the top quarter reserved for later HTML typography, clear readable creature silhouette centered, feet visible, richly decorated lower foliage but no clutter over the creature, depth and atmospheric bokeh. Not a mockup or photograph; illustration only. NO cards, packs, wrappers, borders, lettering, numbers, symbols, emblems, logos, signature, watermark or UI.",
+      "status": "saved"
+    },
+    {
+      "prompt": "Use case: stylized-concept. Asset type: premium vertical trading card booster cover ART for the French browser game Kanto Odyssée. Generate one exquisite 2:3 portrait illustration, edge-to-edge rectangular artwork, no frame and NO TEXT anywhere. Subject: Blastoise, recognizable accurate Pokémon design with blue turtle body, brown shell, cream chest, two metallic water cannons over the shoulders, powerful confident stance, full body centered in the lower-middle, looking toward the viewer, one subject. Scene: sapphire ocean sanctuary at blue hour, a crest of sculptural turquoise waves curling around the creature, pearly spray and elegant water ribbons, distant sea cliffs and a moonlit horizon, luminous sea mist and tiny blue light particles. Palette: deep navy, bright turquoise, ice blue and restrained silver highlights. Style: exceptionally polished Japanese adventure game key art, sophisticated painterly cel shading, fine delicate linework, rich layered water textures, cinematic luminous lighting, majestic and collectible, premium illustration quality. Composition: generous dark quiet navy sky in top quarter reserved for later HTML typography, clear readable creature silhouette centered, legs and shell visible, powerful waves frame the subject without obscuring its face, depth and atmospheric bokeh. Not a mockup or photograph; illustration only. NO cards, packs, wrappers, borders, lettering, numbers, symbols, emblems, logos, signature, watermark or UI.",
+      "status": "imagegen output rejected; no retry; existing official artwork used"
+    },
+    {
+      "prompt": "Use case: stylized-concept. Asset type: premium vertical trading card booster cover ART for the French browser game Kanto Odyssée. Generate one exquisite 2:3 portrait illustration, edge-to-edge rectangular artwork, no frame and NO TEXT anywhere. Subject: Mew, recognizable accurate Pokémon design, elegant small pale pink mythical creature with big blue eyes, rounded feet, small arms, long thin pink tail curling in a graceful sweeping arc, floating in the lower-middle with an enchanting confident serene expression, one subject. Scene: celestial golden sanctuary above the clouds, radiant circular sun halo behind Mew, delicate nebula wisps and amber stardust, luminous floating crystalline fragments, distant fantasy temple silhouettes on cloud islands. Palette: deep midnight indigo and rich antique gold, champagne light, warm pink subject; spectacular gold highlights without blown-out whites. Style: exceptionally polished Japanese adventure game key art, sophisticated painterly cel shading, fine delicate linework, gorgeous light refractions, magical atmospheric depth, rare and collectible, premium illustration quality. Composition: generous dark quiet sky in the top quarter reserved for later HTML typography, clear readable creature silhouette centered, whole body and long graceful tail visible, ornaments and light particles frame the subject without cluttering its face. Not a mockup or photograph; illustration only. NO cards, packs, wrappers, borders, lettering, numbers, symbols, emblems, logos, signature, watermark or UI.",
+      "status": "imagegen output rejected; no retry; existing official artwork used"
+    }
+  ]
+}

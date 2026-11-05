@@ -1,0 +1,12 @@
+import { CHARACTERS, getCharacter } from "./characters.js";
+export const characterPortraitStyle = character => `background-position:${character.portrait%3*50}% ${Math.floor(character.portrait/3)*50}%`;
+export function characterSummaryMarkup(profile,locked) {
+  const character=getCharacter(profile.characterId);
+  return `<div class="equipped-character" style="--character-color:${character?.color ?? "#7a826c"}"><span class="${character ? "character-portrait" : "empty-character-portrait"} equipped-character-portrait" ${character ? `style="${characterPortraitStyle(character)}" role="img" aria-label="Portrait de ${character.name}"` : 'aria-hidden="true"'}>${character ? "" : "?"}</span><div class="equipped-character-copy"><p class="eyebrow">TON PERSONNAGE</p><h3>${character ? `${character.name} <small>· ${character.role}</small>` : "Choisis ton style de jeu"}</h3><p>${character ? character.bonus : "9 personnages gratuits, chacun avec son avantage."}</p></div><button type="button" data-campaign-panel="characters" ${locked ? "disabled" : ""}>${character ? "Changer de personnage" : "Choisir mon personnage"}<span aria-hidden="true"> →</span></button></div>`;
+}
+export function characterCardsMarkup(profile,enabled) {
+  return CHARACTERS.map(character=>{
+    const selected=profile.characterId===character.id;
+    return `<article class="character-card${selected ? " is-equipped" : ""}" style="--character-color:${character.color}" aria-labelledby="character-${character.id}-name"><div class="character-card-top"><span>${character.tag}</span><strong>${selected ? "✓ ÉQUIPÉ" : "GRATUIT"}</strong></div><span class="character-portrait character-card-portrait" style="${characterPortraitStyle(character)}" role="img" aria-label="Portrait de ${character.name}"></span><div class="character-card-identity"><h3 id="character-${character.id}-name">${character.name}</h3><p>${character.role}</p></div><p class="character-description">${character.description}</p><p class="character-perk">${character.bonus}</p><button type="button" data-campaign-action="choose-character" data-character="${character.id}" data-campaign-focus="character-${character.id}" aria-pressed="${selected}" ${!enabled || selected ? "disabled" : ""}>${selected ? `${character.name} sélectionné${["aurore","lyra","enora","naya","tess"].includes(character.id) ? "e" : ""}` : `Sélectionner ${character.name}`}</button></article>`;
+  }).join("");
+}

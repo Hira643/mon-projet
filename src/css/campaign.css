@@ -1,0 +1,104 @@
+.campaign-intro { display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+.campaign-intro h1 { font-size: clamp(35px, 5vw, 52px); line-height: 1.08; letter-spacing: -2px; }
+.campaign-intro .intro-text { max-width: 560px; margin-bottom: 20px; }
+.campaign-stamp { flex-shrink: 0; width: 145px; height: 145px; border: 1px solid #cbd5be; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #e8eddf; color: #46603f; font-family: "Space Grotesk", sans-serif; font-size: 48px; letter-spacing: -2px; transform: rotate(8deg); }
+.campaign-stamp small { font-family: "DM Sans", sans-serif; font-size: 7px; letter-spacing: 1px; }
+.profile-wallet { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #243b32; border-radius: 12px; color: #f5f4eb; padding: 21px 10px; margin-top: 16px; }
+.profile-wallet > div { padding: 0 18px; border-right: 1px solid #ffffff20; }
+.profile-wallet > div:last-child { border: 0; }
+.profile-wallet span { display: block; font-size: 9px; letter-spacing: 1px; color: #c4d2b5; margin-bottom: 8px; }
+.profile-wallet strong { font-family: "Space Grotesk", sans-serif; font-weight: 500; font-size: 26px; font-variant-numeric: tabular-nums; }
+.save-state { text-align: right; font-size: 9px; color: #7a836f; margin: 10px 0 0; }
+.campaign-notice { color: #3c6236; font-size: 12px; line-height: 1.8; margin: 16px 0 0; }
+.campaign-notice:empty { display: none; }
+.campaign-deck-box { background: #eeefe5; border: 1px solid #dce0d1; padding: 21px 24px; margin: 28px 0; border-radius: 12px; }
+.campaign-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 15px; }
+.campaign-section-heading .eyebrow { font-size: 9px; margin: 0 0 6px; }
+.campaign-section-heading h2 { text-transform: none; font-size: 25px; margin: 0; letter-spacing: -.7px; }
+.campaign-section-heading > span { font-size: 10px; color: #718067; }
+.campaign-deck { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; list-style: none; padding: 0; margin: 17px 0 0; }
+.campaign-deck li { display: flex; flex-direction: column; align-items: center; min-width: 0; }
+.campaign-deck img { width: 76px; max-width: 100%; height: 76px; object-fit: contain; }
+.campaign-deck li > span:not(.collection-placeholder) { font-family: "Space Grotesk", sans-serif; font-weight: 500; font-size: 12px; text-transform: capitalize; text-align: center; overflow-wrap: anywhere; }
+.campaign-deck li > small { color: #7b856d; font-size: 9px; margin-top: 4px; }
+.campaign-tabs { display: flex; gap: 7px; border-bottom: 1px solid #d9decf; margin: 0 0 27px; padding-bottom: 12px; }
+.campaign-tabs button { border: 1px solid transparent; padding: 10px 16px; color: #707c62; background: transparent; border-radius: 7px; font-size: 12px; }
+.campaign-tabs button[aria-pressed="true"] { border-color: #c9d1bd; background: #fffefa; color: #304a32; font-weight: 700; }
+.campaign-tabs button:disabled { opacity: .45; cursor: default; }
+.campaign-help { font-size: 12px; line-height: 1.9; color: #758068; margin: 13px 0 25px; max-width: 750px; }
+[data-campaign-section] { scroll-margin-top: 22px; }
+.trainer-group { margin: 30px 0; }
+.trainer-group-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 13px; }
+.trainer-group-heading h3 { font-size: 16px; margin: 0; }
+.trainer-group-heading p { color: #7c846f; font-size: 10px; margin: 0; }
+.trainer-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.trainer-card { display: flex; flex-direction: column; align-items: center; padding: 14px 12px; background: #fffefa; border: 1px solid #dce0d1; border-radius: 12px; text-align: center; min-width: 0; }
+.trainer-card-top { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 14px; }
+.trainer-number { color: #929b86; font-family: "Space Grotesk", sans-serif; font-size: 11px; }
+.difficulty-badge { color: #5d7551; background: #eaf0e0; padding: 3px 6px; border-radius: 4px; font-size: 9px; }
+.trainer-avatar { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: #e5ecda; border: 1px solid #d2debf; color: #657d4d; font-family: "Space Grotesk", sans-serif; font-size: 23px; margin-bottom: 14px; }
+.difficulty-medium .trainer-avatar { background: #e4e9ec; color: #55717b; border-color: #cad8de; }
+.difficulty-hard .trainer-avatar { background: #f2e4da; color: #9b654b; border-color: #e5cfc0; }
+.trainer-card h4 { font-family: "Space Grotesk", sans-serif; font-size: 16px; margin: 0 0 5px; }
+.trainer-card > p { font-size: 10px; color: #89907d; margin: 0 0 14px; min-height: 28px; }
+.trainer-reward { font-size: 10px; color: #4f6945; font-weight: 600; }
+.trainer-completed { color: #929a86; font-size: 9px; margin: 7px 0 15px; }
+.trainer-card > button { width: 100%; margin-top: auto; background: #e8eddd; border: 1px solid #cbd6bd; border-radius: 6px; padding: 9px 5px; color: #3b5832; font-size: 10px; font-weight: 600; }
+.trainer-card > button:hover:enabled { background: #d4e1c4; }
+.trainer-card > button:disabled { opacity: .4; cursor: default; }
+.owned-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 15px; }
+.owned-card { border: 1px solid #dce0d1; border-radius: 12px; padding: 15px; text-align: center; background: #fffefa; min-width: 0; }
+.owned-top { display: flex; justify-content: space-between; align-items: center; color: #87917b; font-size: 10px; }
+.owned-top strong { color: #5a784b; background: #e9efdf; border-radius: 4px; padding: 3px 6px; font-size: 9px; }
+.owned-card > img { display: block; width: 120px; max-width: 100%; height: 120px; object-fit: contain; margin: 10px auto 0; }
+.owned-card h3 { font-family: "Space Grotesk", sans-serif; font-size: 16px; text-transform: capitalize; margin: 10px 0 8px; overflow-wrap: anywhere; }
+.owned-copies, .owned-bonus { font-size: 10px; color: #7d896f; margin: 5px 0; }
+.owned-bonus { font-size: 9px; margin-bottom: 14px; }
+.deck-choice, .upgrade-button { width: 100%; min-height: 36px; padding: 8px 5px; border-radius: 6px; font-size: 10px; }
+.deck-choice { border: 1px solid #d9dfce; background: #f7f8f1; color: #5f7351; margin-bottom: 7px; }
+.upgrade-button { border: 1px solid #36563c; background: #36563c; color: #fffefa; }
+.deck-choice:disabled { color: #879578; cursor: default; }
+.upgrade-button:disabled { opacity: .35; cursor: default; }
+.upgrade-button:hover:enabled { background: #28422d; }
+.upgrade-cost { font-size: 9px; color: #8c947f; margin: 7px 0 0; }
+.collection-placeholder { display: grid; place-items: center; width: 100%; height: 100px; color: #a4af96; font-size: 32px; }
+.campaign-deck .collection-placeholder { height: 76px; }
+.replacement-picker { padding: 18px; border-radius: 10px; border: 1px solid #b9caab; background: #e6eddb; margin: 0 0 22px; }
+.replacement-picker > p { font-size: 13px; margin: 0 0 12px; }
+#replacement-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.replacement-picker button { border: 1px solid #c1d0b1; padding: 9px 12px; background: #fffefa; border-radius: 6px; color: #446339; font-size: 11px; text-transform: capitalize; }
+.replacement-picker > button { margin-top: 12px; background: transparent; }
+.booster-opening { display: grid; grid-template-columns: 210px 1fr; gap: 44px; align-items: center; border: 1px solid #dce0d1; background: #eef0e5; border-radius: 16px; margin-top: 23px; padding: 38px; }
+.booster-pack { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; height: 265px; width: 185px; background: linear-gradient(145deg, #42624e, #1d3429 65%, #547d58); color: #e7efdc; border-radius: 7px; border: 6px solid #79956c; box-shadow: 9px 12px 0 #2c493519, inset 0 0 0 1px #c8d7b54a; transform: rotate(-7deg); }
+.booster-pack > span:first-child { font-family: "Space Grotesk", sans-serif; font-size: 27px; letter-spacing: 4px; }
+.booster-pack .pokeball { width: 53px; height: 53px; flex-shrink: 0; border-color: #ecf1df; }
+.booster-pack strong { font-size: 18px; letter-spacing: 2px; font-family: "Space Grotesk", sans-serif; }
+.booster-pack small { font-size: 7px; letter-spacing: 1px; }
+.booster-opening h3 { font-family: "Space Grotesk", sans-serif; font-size: 24px; letter-spacing: -.6px; margin: 0 0 18px; }
+.booster-opening p { font-size: 12px; line-height: 1.9; color: #758169; }
+.booster-opening .battle-start { margin-top: 13px; }
+#booster-results { margin-top: 30px; }
+#booster-results > h3 { font-size: 18px; }
+.booster-reveal { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin: 18px 0 22px; }
+.booster-result-card { background: #fffefa; border: 1px solid #dce0d1; border-radius: 10px; padding: 14px 10px; text-align: center; min-width: 0; }
+.reveal-label { display: inline-block; padding: 4px 6px; border-radius: 4px; font-size: 8px; }
+.new-card { background: #e1edcf; color: #4a6d2d; }
+.duplicate-card { background: #e8e7ef; color: #72658c; }
+.booster-result-card img { display: block; width: 100px; max-width: 100%; height: 100px; object-fit: contain; margin: 15px auto 7px; }
+.booster-result-card h3 { font-size: 13px; text-transform: capitalize; margin: 8px 0; overflow-wrap: anywhere; }
+.booster-result-card p { color: #849076; font-size: 9px; }
+.campaign-fight { scroll-margin-top: 20px; }
+.campaign-fight-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.campaign-fight-heading h2 { margin: 0; font-size: 24px; text-transform: none; }
+#campaign-fight-round { font-size: 10px; letter-spacing: 1px; color: #c4d2b5; }
+#campaign-battle-status { font-size: 12px; line-height: 1.8; margin: 6px 0 0; }
+.bot-label { color: #c4d2b5; font-size: 8px; letter-spacing: 1px; }
+.fighter-level { display: inline-block; vertical-align: middle; font-family: "DM Sans", sans-serif; font-size: 9px; background: #e9efdf; color: #678353; letter-spacing: 0; padding: 4px 6px; border-radius: 4px; white-space: nowrap; }
+#campaign-fight-log { list-style: none; padding: 0; margin: 12px 0 0; max-height: 200px; overflow: auto; }
+#campaign-fight-log li { font-size: 11px; line-height: 1.8; padding: 7px 0; border-top: 1px solid #dce3d2; color: #708160; }
+#campaign-fight-log li:first-child { font-weight: 600; color: #3c5a2e; }
+.campaign-result { margin-top: 20px; padding: 22px; border: 1px solid #bcccab; background: #e5edd9; border-radius: 12px; }
+.campaign-result h3 { font-family: "Space Grotesk", sans-serif; font-size: 22px; margin: 0 0 10px; color: #3e6030; }
+.campaign-result p { font-size: 12px; color: #688154; line-height: 1.9; }
+@media (max-width: 900px) { .trainer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .owned-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .profile-wallet > div { padding: 0 10px; } .profile-wallet span { font-size: 8px; letter-spacing: 0; } .profile-wallet strong { font-size: 22px; } .campaign-stamp { width: 100px; height: 100px; font-size: 35px; } .campaign-stamp small { font-size: 5px; } .booster-opening { grid-template-columns: 160px 1fr; gap: 24px; padding: 28px; } .booster-pack { width: 145px; height: 220px; gap: 13px; } .booster-pack > span:first-child { font-size: 23px; } .booster-reveal { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .campaign-stamp { display: none; } .campaign-intro h1 { font-size: 36px; } .profile-wallet { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 20px; padding: 18px 10px; } .profile-wallet > div:nth-child(2) { border-right: 0; } .campaign-deck-box { padding: 18px 12px; } .campaign-deck { gap: 5px; } .campaign-deck img { height: 55px; } .campaign-deck li > span:not(.collection-placeholder) { font-size: 9px; } .campaign-section-heading h2 { font-size: 23px; } .campaign-section-heading .eyebrow { font-size: 7px; } .campaign-section-heading > span { font-size: 9px; white-space: nowrap; } .campaign-tabs { gap: 1px; } .campaign-tabs button { padding: 9px 12px; font-size: 11px; } .trainer-grid, .owned-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .trainer-group-heading { align-items: start; } .trainer-group-heading p { font-size: 9px; text-align: right; } .trainer-card { padding: 13px 10px; } .booster-opening { grid-template-columns: 1fr; padding: 27px; text-align: center; } .booster-pack { margin: 0 auto 14px; } .booster-reveal { grid-template-columns: repeat(2, minmax(0, 1fr)); } .campaign-fight-heading h2 { font-size: 20px; } .campaign-fight-heading .page-button { font-size: 9px; } }

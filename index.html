@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#df3d34">
+    <meta name="description" content="Explore les Pokémon avec un Pokédex construit en JavaScript, RxJS et PokéAPI.">
+    <title>Kanto Odyssée — Une équipe, une légende</title>
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Kanto Odyssée, accueil"><span class="pokeball" aria-hidden="true"></span>KANTO<span class="edition">ODYSSÉE / 01</span></a>
+        <div class="header-tools"><button type="button" id="open-guide" class="header-tool" aria-label="Comment jouer">?</button><button type="button" id="open-settings" class="header-tool" aria-label="Réglages et sauvegarde">⚙</button></div>
+        <div class="header-wallet" aria-label="Ton argent"><span class="gold-coin" aria-hidden="true">₽</span><div><small>TON OR</small><strong id="header-gold">0</strong></div></div>
+      </header>
+      <nav class="mode-navigation" aria-label="Modes du projet">
+        <button id="show-campaign" class="mode-button" type="button" aria-pressed="true" aria-controls="campaign-view">Aventure</button>
+        <button id="show-battle" class="mode-button" type="button" aria-pressed="false" aria-controls="battle-view">Combat à 2</button>
+        <button id="show-pokedex" class="mode-button" type="button" aria-pressed="false" aria-controls="pokedex-view">Pokédex</button>
+      </nav>
+      <main>
+        <section id="campaign-view" aria-labelledby="campaign-title">
+          <nav class="campaign-tabs game-menu" aria-label="Menu du jeu"><button type="button" class="game-menu-button menu-home" data-campaign-panel="home" aria-label="Accueil" aria-pressed="false" aria-controls="home-panel"><span class="game-menu-icon" aria-hidden="true">⌂</span><span class="game-menu-copy"><strong>Accueil</strong><small aria-hidden="true">Ton camp de base</small></span><span class="game-menu-indicator" aria-hidden="true"></span></button><button type="button" class="game-menu-button menu-characters" data-campaign-panel="characters" aria-label="Personnages" aria-pressed="false" aria-controls="characters-panel"><span class="game-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></span><span class="game-menu-copy"><strong>Personnages</strong><small aria-hidden="true">Choisis tes bonus</small></span><span class="game-menu-indicator" aria-hidden="true"></span></button><button type="button" class="game-menu-button menu-adventure" data-campaign-panel="trainers" aria-label="Mode aventure" aria-pressed="true" aria-controls="adventure-panel"><span class="game-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16m6-14v16"/></svg></span><span class="game-menu-copy"><strong>Mode aventure</strong><small aria-hidden="true">La route des 100 dresseurs</small></span><span class="game-menu-indicator" aria-hidden="true"></span></button><button type="button" class="game-menu-button menu-trainers" data-campaign-panel="free" aria-label="Dresseurs" aria-pressed="false" aria-controls="free-trainers-panel"><span class="game-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 3 6 2 9 12-2 2L5 10 4 3Zm16 0-6 2-3 4m-2 5-4 5"/><path d="m3 15 6 6m6-18 6 6M3 21l3-3m12 0 3 3"/></svg></span><span class="game-menu-copy"><strong>Dresseurs</strong><small aria-hidden="true">128 adversaires à défier</small></span><span class="game-menu-indicator" aria-hidden="true"></span></button><button type="button" class="game-menu-button menu-collection" data-campaign-panel="collection" aria-label="Ma collection" aria-pressed="false" aria-controls="collection-panel"><span class="game-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="13" height="17" rx="2"/><path d="M4 17H3V3a1 1 0 0 1 1-1h10"/><path d="m13.5 8 3.5 4-3.5 4-3.5-4 3.5-4Z"/></svg></span><span class="game-menu-copy"><strong>Ma collection</strong><small aria-hidden="true">Tes cartes et ton deck</small></span><span class="game-menu-indicator" aria-hidden="true"></span></button><button type="button" class="game-menu-button menu-shop" data-campaign-panel="boosters" aria-label="Boutique" aria-pressed="false" aria-controls="boosters-panel"><span class="game-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l2 13H3L5 8Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2m-8 4v1m8-1v1"/></svg></span><span class="game-menu-copy"><strong>Boutique</strong><small aria-hidden="true">Boosters et nouvelles cartes</small></span><span class="game-menu-indicator" aria-hidden="true"></span></button><button type="button" class="game-menu-button menu-journal" data-campaign-panel="journal" aria-label="Journal" aria-pressed="false" aria-controls="journal-panel"><span class="game-menu-icon" aria-hidden="true">✦</span><span class="game-menu-copy"><strong>Journal</strong><small aria-hidden="true">Missions et badges</small></span><span class="game-menu-indicator" aria-hidden="true"></span></button></nav>
+          <div class="game-banner"><div class="game-banner-copy"><p class="eyebrow">UNE ÉQUIPE. MILLE SOUVENIRS.</p><h1 id="campaign-title">Écris ta<br>légende<span>.</span></h1><p>151 Pokémon. 100 rencontres. Une odyssée qui n’appartient qu’à toi.</p></div><span class="banner-tag">COLLECTION · STRATÉGIE · AVENTURE</span></div>
+          <div class="profile-wallet" aria-label="Ta progression">
+            <div><span>OR</span><strong id="profile-coins">0</strong></div>
+            <div><span>BOOSTERS</span><strong id="profile-boosters">0</strong></div>
+            <div><span>COLLECTION</span><strong id="profile-owned">5/151</strong></div>
+            <div><span>DRESSEURS VAINCUS</span><strong id="profile-defeated">0/100</strong></div>
+          </div>
+          <section class="profile-experience" aria-labelledby="profile-level"><div class="profile-identity"><span id="profile-character-avatar" class="profile-avatar" aria-hidden="true">TOI</span><div><h2 id="profile-level">Dresseur niveau 1</h2><p id="profile-character-name">Aucun personnage sélectionné</p><p id="profile-total-xp">0 XP au total</p></div></div><div class="profile-xp-meter"><div><span>PROCHAIN NIVEAU</span><strong id="profile-xp-label">0 / 100 XP</strong></div><progress id="profile-xp" value="0" max="100" aria-label="Expérience du profil">0 / 100</progress></div></section>
+          <div id="character-summary"></div>
+          <p id="campaign-save-state" class="save-state">Progression sauvegardée dans ce navigateur</p>
+          <p id="campaign-notice" class="campaign-notice" role="status" aria-live="polite" aria-atomic="true"></p>
+          <section class="campaign-deck-box" aria-labelledby="campaign-deck-title"><div class="campaign-section-heading"><div><p class="eyebrow">PRÊT POUR LE PROCHAIN COMBAT</p><h2 id="campaign-deck-title">Mon deck</h2></div><span>5 cartes · PV ×3</span></div><ul id="campaign-deck" class="campaign-deck" aria-label="Ton deck de cinq Pokémon"></ul></section>
+          
+          <section id="campaign-fight" class="campaign-fight" aria-labelledby="campaign-fight-name" hidden>
+            <div class="campaign-fight-heading"><h2 id="campaign-fight-name">Combat</h2><button type="button" class="page-button" data-campaign-action="back">Retour à la route</button></div>
+            <div class="battle-turn"><div class="battle-turn-heading"><span id="campaign-fight-round">PRÉPARATION</span><p id="campaign-battle-status" role="status" aria-live="polite" aria-atomic="true"></p></div><span class="bot-label">ROBOT AUTOMATIQUE</span></div>
+            <p id="pokemon-xp-status" class="pokemon-xp-status" role="status" aria-live="polite" aria-atomic="true"></p>
+            <div id="campaign-arena" class="battle-arena" hidden></div>
+            <section id="battle-bag" class="battle-bag" aria-label="Sac de combat" hidden></section>
+            <section id="campaign-result" class="campaign-result" aria-labelledby="campaign-result-title" hidden><h3 id="campaign-result-title"></h3><p id="campaign-result-text"></p><div id="adventure-rewards"></div><button id="replay-campaign" type="button" class="battle-start combat-replay" data-campaign-action="replay" hidden>Recommencer le combat ↻</button><button id="continue-adventure" type="button" class="battle-start" data-campaign-action="continue" hidden>Continuer l’aventure →</button><button id="claim-reward" type="button" class="battle-start" data-campaign-action="reward" hidden>Récupérer ma récompense</button><button id="open-reward-boosters" type="button" class="battle-start" data-campaign-action="boosters" hidden>Aller à la boutique ↗</button></section>
+            <details class="battle-log-box"><summary>Le fil du combat</summary><ol id="campaign-fight-log"></ol></details>
+          </section>
+          <div id="campaign-panels">
+            <section id="home-panel" data-campaign-section="home" aria-label="Ton camp de base"><div id="league-home"></div></section>
+            <section id="journal-panel" data-campaign-section="journal" aria-label="Journal du dresseur" hidden><div id="league-journal"></div></section>
+            <section id="characters-panel" data-campaign-section="characters" aria-labelledby="characters-title" hidden><div class="campaign-section-heading"><div><p class="eyebrow">9 PERSONNAGES · 9 FAÇONS DE JOUER</p><h2 id="characters-title">Choisis ton personnage</h2></div><button id="clear-character" type="button" class="page-button" data-campaign-action="choose-character" data-character="" disabled>Jouer sans personnage</button></div><p class="campaign-help">Tous les personnages sont gratuits. Équipe un seul personnage à la fois et change librement entre les combats. Ses bonus s’appliquent à tes 5 Pokémon et à tes victoires en aventure et contre les dresseurs libres. Le personnage choisi au début du combat garde ses effets jusqu’à la récompense.</p><div id="character-cards" class="character-grid"></div></section>
+            <section id="adventure-panel" data-campaign-section="trainers" aria-labelledby="trainers-title"><div class="campaign-section-heading"><div><p class="eyebrow">100 RENCONTRES, UNE GRANDE AVENTURE</p><h2 id="trainers-title">La route des dresseurs</h2></div></div><p class="campaign-help">Pars du premier dresseur et avance de victoire en victoire. Chaque rencontre débloque la suivante : explore 10 régions et récupère de l’or, de l’XP et des cartes surprises. Un gardien t’attend toutes les 10 étapes.</p><div id="trainer-list"></div></section>
+            <section id="free-trainers-panel" data-campaign-section="free" aria-labelledby="free-trainers-title" hidden><div class="campaign-section-heading"><div><p class="eyebrow">COMBATS LIBRES · REJOUABLES À VOLONTÉ</p><h2 id="free-trainers-title">Les 128 dresseurs</h2></div><span id="free-trainer-count">0/128 vaincus</span></div><p class="campaign-help">Choisis parmi 128 adversaires : les 60 dresseurs des niveaux 1 à 15, puis 4 nouveaux dresseurs aux niveaux 20, 25, 30… jusqu’au niveau 100. Chacun possède 5 Pokémon de son niveau. Plus le niveau du dresseur est élevé, plus tu gagnes : 10 or et 25 XP par niveau. Par exemple : niveau 5, 50 or et 125 XP ; niveau 15, 150 or et 375 XP ; niveau 100, 1 000 or et 2 500 XP par victoire. Tu peux les réaffronter autant que tu veux pour gagner de l’or et acheter des boosters. Ces combats ne changent pas ta position sur la route de l’aventure.</p><div id="free-trainer-list"></div></section>
+            <section id="collection-panel" data-campaign-section="collection" aria-labelledby="collection-title" hidden><div class="campaign-section-heading"><div><p class="eyebrow">TES CARTES, TON ÉQUIPE</p><h2 id="collection-title">Ma collection</h2></div></div><p class="campaign-help">Garde 5 Pokémon dans ton deck. Seul le Pokémon qui met l’adversaire K.O. gagne de l’XP, jusqu’au niveau 100. Plus l’adversaire vaincu est fort, plus il rapporte d’XP. Les niveaux sont deux fois plus rapides : 50 XP pour atteindre le niveau 2, puis 50 XP de plus par palier. Chaque niveau ajoute 10 % des statistiques de base. Consulte ses capacités pour voir les gains du prochain niveau. Aucun double ni or nécessaire.</p><div id="replacement-picker" class="replacement-picker" hidden><p id="replacement-title"></p><div id="replacement-options"></div><button type="button" data-campaign-action="cancel-replace">Annuler le remplacement</button></div><div class="collection-toolbar"><label><span>Rechercher un partenaire</span><input id="collection-search" type="search" placeholder="Nom ou numéro…" autocomplete="off"></label><label><span>Afficher</span><select id="collection-filter"><option value="all">Tous mes Pokémon</option><option value="deck">Mon équipe</option><option value="favorites">Mes favoris</option></select></label><label><span>Trier par</span><select id="collection-sort"><option value="number">N° Pokédex</option><option value="level">Niveau le plus élevé</option><option value="name">Nom</option></select></label><span id="collection-visible-count"></span></div><p id="collection-empty" class="empty-collection" hidden>Aucun Pokémon ne correspond à ta recherche.</p><div id="owned-cards" class="owned-grid"></div></section>
+            <section id="boosters-panel" data-campaign-section="boosters" aria-labelledby="boosters-title" hidden><div class="campaign-section-heading"><div><p class="eyebrow">CHOISIS TON PROCHAIN BOOSTER</p><h2 id="boosters-title">La boutique</h2></div></div><p class="campaign-help">Gagne de l’or en affrontant les dresseurs, puis achète tes boosters. 5, 10 ou 15 Pokémon de la première génération à débloquer. Les nouveaux Pokémon sont prioritaires, sans répétition tant qu’il en reste à découvrir. Un Pokémon déjà débloqué ne gagne ni XP ni niveau grâce au booster.</p><div id="booster-shop" class="booster-shop"></div><div id="item-shop"></div><section id="booster-results" aria-labelledby="booster-results-title" hidden><h3 id="booster-results-title">Tes cartes obtenues</h3><div id="booster-cards" class="booster-reveal"></div><button type="button" class="page-button" data-campaign-panel="collection">Voir ma collection →</button></section></section>
+          </div>
+          <details class="battle-rules"><summary>Règles de l’aventure</summary><ul><li>L’onglet Dresseurs propose aussi 128 adversaires libres et rejouables, 4 par niveau de 1 à 15, puis tous les 5 niveaux de 20 à 100 : chaque victoire donne 10 or et 25 XP multipliés par le niveau du dresseur (jusqu’à 1 000 or et 2 500 XP au niveau 100). Ces combats n’avancent pas la route de l’aventure.</li><li>Ton deck contient 5 cartes de la première génération. Les PV sont multipliés par 3.</li><li>Les 100 dresseurs se débloquent dans l’ordre. Chaque victoire donne une base de 10 or et 25 XP en facile, 30 or et 60 XP en moyen, 100 or et 150 XP en difficile, plus des bonus aléatoires et 1 à 2 cartes (dont au moins un double). Les gardiens donnent 3 cartes et 50 or / XP supplémentaires. Les boosters s’obtiennent uniquement par achat.</li><li>Les boosters Découverte, Super et Hyper coûtent 50, 90 et 130 or et donnent respectivement 5, 10 et 15 cartes. Les Pokémon encore inconnus sont prioritaires ; les boosters ne donnent aucune XP.</li><li>Chaque Pokémon possède sa propre barre d’XP jusqu’au niveau 100. Un K.O. rapporte de l’XP uniquement au Pokémon qui porte le coup final : plus le niveau et les statistiques de base du Pokémon vaincu sont élevés, plus le gain augmente. La récompense exacte est affichée sur sa fiche pendant le combat. Les attaques sans K.O. ne donnent aucune XP ; les Pokémon sur le banc, la protection et les changements ne gagnent rien. L’XP est sauvegardée après chaque K.O., même en cas de défaite ou d’abandon. Aucun or ni double nécessaire. Consulte « Capacités & progression » pour voir les gains du niveau suivant.</li><li>Chaque Pokémon a quatre attaques : Coup rapide et Frappe ajoutent 1 charge ; Vague consomme 2 charges ; Déferlante ultime en consomme 3. La protection ajoute aussi 1 charge. Les charges sont conservées lorsque tu changes de Pokémon.</li><li>L’ultime utilise le meilleur type du Pokémon contre sa cible, avec une puissance ×1,6. Les faiblesses, résistances et immunités sont prises en compte. Un Pokémon reçoit un bonus ×1,25 quand il utilise son propre type.</li><li>Se protéger consomme un tour et réduit de moitié la prochaine attaque reçue. Chaque joueur agit à son tour, le robot jouant automatiquement.</li><li>Mettre les 5 Pokémon adverses K.O. remporte le combat. Une défaite ne retire ni or ni carte. La progression est sauvegardée sur cet appareil et dans ce navigateur.</li></ul></details>
+          <dialog id="game-settings" class="utility-dialog" aria-labelledby="settings-title"><button type="button" class="dialog-close" data-campaign-action="close-settings" aria-label="Fermer les réglages">×</button><p class="eyebrow">JOUE À TA FAÇON</p><h2 id="settings-title">Réglages & sauvegarde</h2><div class="setting-row"><div><strong>Effets sonores</strong><p>Attaques, K.O., victoires et récompenses.</p></div><button type="button" id="toggle-sound" data-campaign-action="toggle-sound" aria-pressed="false">Activer le son</button></div><div class="setting-row"><div><strong>Animations</strong><p>Effets de combat, apparitions et mouvements.</p></div><button type="button" id="toggle-motion" data-campaign-action="toggle-motion" aria-pressed="true">Animations activées</button></div><section class="save-tools"><h3>Emporte ta progression</h3><p>Exporte un fichier de sauvegarde pour garder tes Pokémon, ton or, tes badges et tes niveaux. Tu pourras le réimporter ici.</p><button type="button" data-campaign-action="export-save" class="gold-button">Exporter ma sauvegarde ↓</button><label class="import-label" for="import-save">Importer un fichier de sauvegarde<input id="import-save" type="file" accept="application/json,.json"></label><p id="import-preview" role="status"></p><button type="button" id="confirm-import" data-campaign-action="confirm-import" hidden>Remplacer ma sauvegarde par ce fichier</button></section></dialog>
+          <dialog id="game-guide" class="utility-dialog" aria-labelledby="guide-title"><button type="button" class="dialog-close" data-campaign-action="close-guide" aria-label="Fermer le guide">×</button><p class="eyebrow">BIENVENUE DANS KANTO ODYSSÉE</p><h2 id="guide-title">Ta première aventure</h2><div class="guide-steps"><div><b>01</b><h3>Prépare ton équipe</h3><p>Choisis un personnage pour son bonus et compose un deck de 5 Pokémon dans ta collection.</p></div><div><b>02</b><h3>Joue avec les types</h3><p>Chaque Pokémon a 4 attaques. Les deux premières chargent l’énergie ; les spéciales en consomment. Se protéger réduit la prochaine attaque reçue.</p></div><div><b>03</b><h3>Grandis à chaque K.O.</h3><p>Seul le Pokémon qui porte le coup final gagne de l’XP. Un adversaire fort rapporte davantage. Le niveau maximum est 100.</p></div><div><b>04</b><h3>Trace ta route</h3><p>Avance dans les 100 étapes ou affronte les 128 dresseurs libres. Gagne de l’or pour les boosters, récupère les missions et obtiens les 10 badges.</p></div></div><p class="guide-note">Tu commences avec 3 potions et 1 éther dans ton sac. Les objets prennent un tour. Les boosters s’achètent uniquement avec l’or du jeu. Ta progression est sauvegardée dans ce navigateur.</p></dialog>
+          <dialog id="card-info-dialog" class="card-info-dialog" aria-labelledby="card-info-title"><button type="button" class="dialog-close" data-campaign-action="close-card" aria-label="Fermer les capacités de la carte">×</button><div id="card-info-body"></div></dialog>
+        </section>
+        <section id="battle-view" aria-labelledby="battle-title" hidden>
+          <div class="battle-intro">
+            <div><p class="eyebrow">L’ARÈNE DE KANTO</p><h1 id="battle-title">Une équipe.<br>Un duel<span>.</span></h1><p class="intro-text">Cinq cartes chacun. Choisis ton Pokémon, attaque à ton tour et mets l’équipe adverse K.O.</p></div>
+            <button id="new-battle" class="battle-start" type="button">Distribuer les cartes ↗</button>
+          </div>
+          <div class="battle-summary"><span><strong>2 joueurs</strong> sur le même écran</span><span><strong>5 cartes</strong> au hasard chacun</span><span><strong>PV ×3</strong> autres stats inchangées</span><span><strong>151 Pokémon</strong> première génération</span></div>
+          <div class="battle-turn">
+            <div class="battle-turn-heading"><span id="battle-turn-badge">5 VS 5</span><p id="battle-status" role="status" aria-live="polite" aria-atomic="true">Prêts ? Distribue les cartes pour commencer une partie.</p></div>
+            <button id="battle-handoff" type="button" hidden>Commencer mon tour →</button>
+            <button id="replay-battle" type="button" class="battle-start combat-replay" hidden>Recommencer le combat ↻</button>
+          </div>
+          <div id="battle-empty" class="battle-empty"><div class="battle-empty-content"><div class="battle-empty-mark"><span class="pokeball" aria-hidden="true"></span><strong>5 vs 5</strong><span class="pokeball" aria-hidden="true"></span></div><h2>À vous de jouer.</h2><p>Les équipes sont tirées parmi les 151 Pokémon de PokéAPI. Le joueur 1 commence.</p></div></div>
+          <div id="battle-arena" class="battle-arena" hidden></div>
+          <section id="battle-log-box" class="battle-log-box" aria-labelledby="battle-log-title" hidden><h2 id="battle-log-title">Le fil du combat</h2><ol id="battle-log"></ol></section>
+          <details class="battle-rules"><summary>Comment jouer ?</summary><ul><li>Deux joueurs sur le même écran, cinq cartes aléatoires chacun parmi les 151 Pokémon.</li><li>Les PV sont multipliés par 3. Choisis un Pokémon disponible puis une action à ton tour.</li><li>Quatre attaques par Pokémon : deux libres (+1 charge), Vague à 2 charges et ultime à 3 charges. Protection : +1 charge.</li><li>La protection réduit de moitié la prochaine attaque reçue. Les attaques prennent en compte les types et affichent leurs dégâts avant de jouer.</li><li>Chaque action passe la main. Le premier à mettre les 5 Pokémon adverses K.O. gagne.</li></ul></details>
+        </section>
+        <div id="pokedex-view" hidden>
+        <header class="pokedex-header" aria-labelledby="page-title">
+          <div class="intro" aria-labelledby="page-title">
+          <p class="eyebrow">LE CARNET DU DRESSEUR</p>
+          <h1 id="page-title">Première génération<span>.</span></h1>
+          <p class="intro-text">Les 151 Pokémon de Kanto, de Bulbizarre à Mew. Choisis une carte pour découvrir sa fiche issue de PokéAPI.</p>
+          </div>
+          <div class="pokedex-header-search">
+          <form id="search-form" class="search-form" role="search">
+            <label for="search">Quel Pokémon cherches-tu ?</label>
+            <div class="search-row">
+              <input id="search" name="pokemon" type="search" placeholder="Ex. Salamèche ou 4" value="" autocomplete="off" spellcheck="false" maxlength="80" aria-describedby="search-help">
+              <button class="search-button" type="submit">Rechercher <span aria-hidden="true">↗</span></button>
+            </div>
+            <p id="search-help" class="help">Première génération uniquement · Nom français ou numéro de 1 à 151.</p>
+          </form>
+          <div class="suggestions" aria-label="Exemples de recherche">
+            <span>Essaie aussi</span>
+            <button type="button" data-query="bulbizarre">Bulbizarre</button>
+            <button type="button" data-query="dracaufeu">Dracaufeu</button>
+            <button type="button" data-query="metamorph">Métamorph</button>
+          </div>
+          </div>
+        </header>
+        <section class="explorer" aria-label="Rechercher un Pokémon">
+          <section class="catalogue" aria-labelledby="catalogue-title">
+            <div class="catalogue-header">
+              <div><p class="eyebrow">LE CATALOGUE</p><h2 id="catalogue-title" tabindex="-1">Les 151 Pokémon de Kanto</h2></div>
+              <p id="catalogue-count">Première génération · Données PokéAPI</p>
+            </div>
+            <p id="catalogue-status" class="status" role="status" aria-live="polite">Chargement du catalogue…</p>
+            <button id="retry-page" class="page-button" type="button" hidden>Réessayer</button>
+            <ul id="pokemon-grid" class="pokemon-grid" aria-label="Liste des Pokémon" aria-busy="true"></ul>
+            <nav class="pagination" aria-label="Pages du catalogue">
+              <button id="previous-page" class="page-button" type="button" disabled>← Précédent</button>
+              <span id="page-label">Page 1</span>
+              <button id="next-page" class="page-button" type="button" disabled>Suivant →</button>
+            </nav>
+          </section>
+          <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true">Choisis un Pokémon de la première génération pour voir sa fiche.</p>
+          <article id="pokemon-card" class="pokemon-card" aria-labelledby="pokemon-name" hidden>
+            <div class="portrait">
+              <span id="pokemon-number" class="pokemon-number"></span>
+              <div class="portrait-circle" aria-hidden="true"></div>
+              <img id="pokemon-image" width="320" height="320" alt="" decoding="async" hidden>
+              <p id="image-fallback" class="image-fallback" hidden>Illustration indisponible</p>
+              <span class="portrait-caption">POKÉMON / FICHE D'IDENTITÉ</span>
+            </div>
+            <div class="details">
+              <p class="eyebrow">DANS TON POKÉDEX</p>
+              <h2 id="pokemon-name"></h2>
+              <div id="pokemon-types" class="types" aria-label="Types"></div>
+              <dl class="measurements">
+                <div><dt>Taille</dt><dd id="pokemon-height"></dd></div>
+                <div><dt>Poids</dt><dd id="pokemon-weight"></dd></div>
+              </dl>
+              <h3>Statistiques de base</h3>
+              <ul id="pokemon-stats" class="stats"></ul>
+            </div>
+          </article>
+          <div id="card-actions" class="card-actions" hidden>
+            <button id="back-to-catalogue" class="back-button" type="button" aria-label="Retour à la liste des Pokémon" title="Retour à la liste des Pokémon">
+              <span aria-hidden="true">←</span>
+            </button>
+          </div>
+          <noscript><p>Active JavaScript pour rechercher un Pokémon.</p></noscript>
+        </section>
+        </div>
+      </main>
+      <footer><span>KANTO ODYSSÉE · Ton équipe, ta légende</span><a href="https://pokeapi.co/" target="_blank" rel="noopener noreferrer">Données : PokéAPI ↗</a></footer>
+    </div>
+  </body>
+</html>

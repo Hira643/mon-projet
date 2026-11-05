@@ -1,0 +1,19 @@
+{
+  "name": "mon-projet-rxjs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Projet JavaScript avec RxJS et Vite",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "rxjs": "^7.8.2"
+  },
+  "devDependencies": {
+    "vite": "^8.3.5"
+  }
+}

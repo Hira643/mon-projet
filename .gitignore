@@ -1,0 +1,15 @@
+# Dépendances et fichiers générés
+node_modules/
+dist/
+build/
+__pycache__/
+*.log
+
+# Configuration locale et secrets
+.env
+.env.*
+!.env.example
+
+# Fichiers système
+.DS_Store
+Thumbs.db

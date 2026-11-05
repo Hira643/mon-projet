@@ -1,0 +1,97 @@
+.mode-navigation { display: flex; gap: 5px; margin-top: 23px; padding: 4px; width: fit-content; background: #e9e9df; border: 1px solid #dddfd2; border-radius: 10px; }
+.mode-button { border: 0; padding: 10px 19px; border-radius: 7px; background: transparent; color: #66705b; font-size: 12px; font-weight: 600; }
+.mode-button[aria-pressed="true"] { color: #263b30; background: #fffefa; box-shadow: 0 1px 4px #28372913; }
+.battle-intro { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.battle-intro h1 { font-size: clamp(36px, 5vw, 52px); margin: 13px 0 16px; }
+.battle-intro .intro-text { margin-bottom: 0; max-width: 510px; }
+.battle-start { flex-shrink: 0; min-height: 48px; padding: 12px 19px; border: 0; border-radius: 9px; background: #df3d34; color: white; font-size: 12px; font-weight: 700; }
+.battle-start:hover:enabled { background: #bb2f28; }
+.battle-start:disabled { opacity: .6; cursor: wait; }
+.battle-summary { display: flex; flex-wrap: wrap; gap: 9px; margin: 24px 0; }
+.battle-summary span { display: inline-flex; align-items: center; gap: 7px; background: #e8ebdc; color: #526145; padding: 8px 11px; border-radius: 6px; font-size: 10px; }
+.battle-summary strong { font-family: "Space Grotesk", sans-serif; color: #303e28; }
+.battle-turn { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: #243b32; color: #f4f3eb; border-radius: 12px; padding: 17px 21px; margin-bottom: 20px; }
+.battle-turn-heading { flex: 1; min-width: 210px; }
+#battle-turn-badge { font-family: "Space Grotesk", sans-serif; font-size: 10px; letter-spacing: 1.5px; color: #c4d2b5; }
+#battle-status { margin: 6px 0 0; font-size: 12px; line-height: 1.7; }
+#battle-status.is-error { color: #ffd0c8; }
+#battle-handoff { border: 1px solid #c4d2b5; border-radius: 8px; background: #f0f2e6; color: #243b32; padding: 11px 14px; font-size: 11px; font-weight: 700; }
+#battle-handoff:hover { background: #d5e2bd; }
+.battle-empty { position: relative; display: grid; place-items: center; text-align: center; min-height: 300px; background: radial-gradient(ellipse at center, #e0e7d4, #eef0e5 65%); border: 1px solid #dce0d1; border-radius: 16px; padding: 35px 20px; overflow: hidden; }
+.battle-empty::before { content: ""; position: absolute; width: 280px; height: 280px; border: 1px solid #ccd6bd; border-radius: 50%; box-shadow: 0 0 0 36px #dce4d155; }
+.battle-empty-content { z-index: 1; }
+.battle-empty-mark { display: flex; align-items: center; justify-content: center; gap: 24px; }
+.battle-empty-mark .pokeball { width: 48px; height: 48px; }
+.battle-empty-mark strong { font-family: "Space Grotesk", sans-serif; font-size: 54px; font-weight: 600; letter-spacing: -3px; }
+.battle-empty h2 { font-size: 20px; text-transform: none; letter-spacing: -.5px; margin: 22px 0 6px; }
+.battle-empty p { color: #69745e; font-size: 12px; max-width: 350px; line-height: 1.7; margin: 0 auto; }
+.battle-arena { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.arena-vs { position: absolute; left: 50%; top: 185px; transform: translate(-50%, -50%); z-index: 1; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; border: 4px solid #f5f3ec; background: #263b30; color: #fffefa; font-family: "Space Grotesk", sans-serif; font-size: 11px; }
+.player-board { min-width: 0; padding: 20px; border: 1px solid #d6dacb; border-radius: 14px; background: #fffefa; }
+.player-board.current-player { border-color: #6c8d70; box-shadow: 0 0 0 2px #77997419; }
+.player-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.player-header h3 { display: flex; align-items: center; gap: 8px; font-size: 13px; margin: 0; }
+.player-header > span { color: #6b7562; font-size: 10px; }
+.player-dot { width: 8px; height: 8px; border-radius: 50%; background: #5e8a83; }
+.player-2 .player-dot { background: #ce6a59; }
+.fighter-portrait { position: relative; min-height: 200px; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, #e7edde 0, #eff1e8 52%, transparent 53%); margin-top: 12px; }
+.fighter-image { width: 190px; max-width: 100%; height: 190px; object-fit: contain; filter: drop-shadow(0 10px 9px #526d3420); }
+.fighter-id { position: absolute; bottom: 10px; left: 0; font-size: 10px; color: #7c8374; }
+.fighter-missing { font-size: 11px; color: #6c7661; }
+.fighter-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 9px; margin: 10px 0 18px; }
+.fighter-heading h4 { font-family: "Space Grotesk", sans-serif; font-size: 24px; font-weight: 600; letter-spacing: -.7px; text-transform: capitalize; margin: 0; overflow-wrap: anywhere; }
+.fighter-heading .type-badge { padding: 4px 8px; font-size: 9px; }
+.health-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 7px; font-size: 11px; color: #5d6c50; }
+.health-heading strong { color: #2e452f; font-variant-numeric: tabular-nums; font-size: 15px; }
+.health-heading strong > span { font-weight: 400; color: #788270; font-size: 11px; }
+.hp-multiplier { display: inline-block; margin-left: 4px; background: #e7eddc; padding: 2px 5px; border-radius: 4px; font-weight: 700; font-size: 10px; }
+.health-bar { display: block; appearance: none; width: 100%; height: 9px; border: 0; border-radius: 99px; overflow: hidden; background: #e9ecdf; }
+.health-bar::-webkit-progress-bar { background: #e9ecdf; border-radius: 99px; }
+.health-bar::-webkit-progress-value { background: #72906a; border-radius: 99px; }
+.health-bar::-moz-progress-bar { background: #72906a; border-radius: 99px; }
+.fighter-stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 15px 0; margin: 0 0 10px; border-bottom: 1px solid #ebede3; gap: 5px; }
+.fighter-stats dt { font-size: 9px; white-space: nowrap; }
+.fighter-stats dd { font-size: 15px; }
+.attack-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.attack-button { display: flex; flex-direction: column; align-items: start; gap: 5px; border: 1px solid #315142; background: #315142; border-radius: 8px; padding: 12px 10px; color: #fffefa; text-align: left; }
+.attack-button > span { font-size: 10px; }
+.attack-button > strong { font-family: "Space Grotesk", sans-serif; font-size: 13px; }
+.attack-button.secondary { background: #f1f3e9; color: #315142; border-color: #d4ddc9; }
+.attack-button:hover:enabled { filter: brightness(.93); }
+.attack-button:disabled { opacity: .4; cursor: default; }
+.hand-caption { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #5f6e53; margin: 22px 0 9px; }
+.hand-caption > span { display: block; font-weight: 400; letter-spacing: 0; color: #7f8776; font-size: 10px; margin-top: 4px; }
+.pokemon-hand { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; list-style: none; padding: 0; margin: 0; }
+.pokemon-hand > li { min-width: 0; }
+.hand-card { width: 100%; min-height: 115px; display: flex; flex-direction: column; align-items: center; padding: 6px 3px; border: 1px solid #e1e5d7; border-radius: 7px; background: #f5f6ef; color: #3c4934; }
+.hand-card img { width: 100%; max-width: 64px; height: 58px; object-fit: contain; }
+.hand-number { align-self: start; font-size: 8px; color: #87917a; }
+.hand-name { width: 100%; font-size: 8px; font-weight: 600; text-transform: capitalize; overflow-wrap: anywhere; }
+.hand-hp { font-size: 8px; margin-top: 4px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.hand-no-image { height: 58px; display: grid; place-items: center; }
+.hand-card.is-active { border-color: #658763; background: #e9efdd; }
+.hand-card:disabled { cursor: default; }
+.hand-card:hover:enabled { border-color: #658763; background: #e2ebd5; }
+.hand-card.is-ko { opacity: .38; filter: grayscale(1); }
+.image-unavailable { font-size: 9px; color: #68785b; }
+.battle-log-box { margin-top: 24px; border: 1px solid #dce0d1; border-radius: 12px; background: #f0f1e7; padding: 18px 22px; }
+.battle-log-box h2 { margin: 0 0 12px; text-transform: none; font-size: 16px; letter-spacing: -.4px; }
+#battle-log { list-style: none; padding: 0; margin: 0; max-height: 180px; overflow: auto; }
+#battle-log li { font-size: 11px; line-height: 1.8; color: #69745f; padding: 7px 0; border-top: 1px solid #dde3d2; }
+#battle-log li:first-child { color: #2d4732; font-weight: 600; }
+.battle-rules { margin-top: 22px; font-size: 12px; color: #5c6950; }
+.battle-rules summary { cursor: pointer; width: fit-content; padding: 8px 0; font-weight: 600; }
+.battle-rules ul { padding-left: 18px; line-height: 1.9; }
+@media (max-width: 900px) { .battle-intro { display: block; } .battle-start { margin-top: 22px; } .player-board { padding: 15px; } .battle-arena { gap: 16px; } .fighter-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 10px; } .pokemon-hand { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; } .hand-card { min-height: 110px; } .fighter-heading h4 { font-size: 21px; } .hand-name, .hand-hp { font-size: 9px; } }
+@media (max-width: 600px) { .battle-arena { grid-template-columns: 1fr; gap: 24px; } .arena-vs { position: static; transform: none; margin: -10px auto; order: 1; } .player-1 { order: 0; } .player-2 { order: 2; } .pokemon-hand { grid-template-columns: repeat(5, minmax(0, 1fr)); } .fighter-stats { grid-template-columns: repeat(5, minmax(0, 1fr)); } .player-board { padding: 18px; } .battle-intro h1 { font-size: 38px; letter-spacing: -2px; } .battle-turn { padding: 16px; } #battle-handoff { width: 100%; } .hand-name, .hand-hp { font-size: 8px; } }
+
+/* Le passage de main reste accessible pendant le défilement de l’arène. */
+.battle-turn { position: sticky; top: 12px; z-index: 5; box-shadow: 0 8px 20px #243b3216; }
+.player-board { scroll-margin-top: 150px; }
+@media (min-width: 601px) and (max-width: 900px) {
+  .pokemon-hand { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .fighter-stats { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .fighter-portrait { min-height: 165px; }
+  .fighter-image { width: 160px; height: 160px; }
+  .hand-name, .hand-hp { font-size: 8px; }
+}
